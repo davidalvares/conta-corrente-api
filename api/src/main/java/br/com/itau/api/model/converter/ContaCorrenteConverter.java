@@ -9,9 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ContaCorrenteConverter extends Converter<ContaCorrente, ContaCorrenteDTO> {
 
-
     public ContaCorrenteConverter() {
-        super(ContaCorrenteConverter::convertFromDTO,ContaCorrenteConverter::convertFromEntity);
+        super(ContaCorrenteConverter::convertFromDTO, ContaCorrenteConverter::convertFromEntity);
     }
 
     private static ContaCorrente convertFromDTO(final ContaCorrenteDTO dto) {
@@ -20,7 +19,6 @@ public class ContaCorrenteConverter extends Converter<ContaCorrente, ContaCorren
                 .conta(dto.getConta()).email(dto.getEmail()).chavePix(dto.getChavePix())
                 .build();
     }
-
 
     private static ContaCorrenteDTO convertFromEntity(final ContaCorrente entity) {
         return ContaCorrenteDTO.builder().id(entity.getId()).nome(entity.getNome())

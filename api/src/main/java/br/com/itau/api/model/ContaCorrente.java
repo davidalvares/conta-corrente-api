@@ -3,6 +3,7 @@ package br.com.itau.api.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -12,8 +13,9 @@ import javax.persistence.*;
 @Builder(toBuilder = true)
 @Entity
 @Table(name = "conta_corrente")
-public class ContaCorrente {
+public class ContaCorrente implements Serializable {
 
+    private static final long serialVersionUID = 2251396180018529054L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_conta_corrente")
