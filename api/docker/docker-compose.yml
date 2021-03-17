@@ -1,0 +1,16 @@
+version: '3.7'
+volumes:
+  database-data:
+services:
+  database:
+    container_name: postgres_conta_corrente
+    image: "postgres:9.5.16-alpine"
+    environment:
+      - POSTGRES_DB=conta_corrente
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - database-data:/var/lib/postgres_conta_corrente/data/
+
