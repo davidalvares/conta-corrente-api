@@ -1,6 +1,8 @@
 package br.com.itau.api.component;
 
 
+import org.springframework.stereotype.Component;
+
 import java.util.function.Function;
 
 public abstract class Converter<E,D> {
@@ -8,7 +10,7 @@ public abstract class Converter<E,D> {
     private final Function<D,E> fronDto;
     private final Function<E,D> fronEntity;
 
-    protected Converter(Function<D, E> fronDto, Function<E, D> fronEntity) {
+    public Converter(Function<D, E> fronDto, Function<E, D> fronEntity) {
         this.fronDto = fronDto;
         this.fronEntity = fronEntity;
     }
