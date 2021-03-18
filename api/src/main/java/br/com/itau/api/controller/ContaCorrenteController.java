@@ -12,8 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @Controller
 @RequestMapping("contas")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -24,9 +22,8 @@ public class ContaCorrenteController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ContaCorrenteDTO> findById(@PathVariable("id") Long id) {
-        Optional<ContaCorrente> contaCorrente = service.findById(id);
-        return contaCorrente.isPresent() ? ResponseEntity.ok(this.converter.convertToDto(contaCorrente.get())) :
-                ResponseEntity.ok().build();
+      var contaCorrente = service.findById(id);
+        return ResponseEntity.ok(converter.convertToDto(contaCorrente));
     }
 
     @PostMapping
@@ -41,9 +38,9 @@ public class ContaCorrenteController {
         return ResponseEntity.status(HttpStatus.OK).body(this.converter.convertToDto(service.update(id,contaCorrente)));
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<ContaCorrenteDTO> findByCpfCnpj(@RequestParam("cpfCnpj") String cpfCnpj){
-        Optional<ContaCorrente> conta = service.findByCpfCnpj(cpfCnpj);
-        return conta.isPresent() ? ResponseEntity.ok(this.converter.convertToDto(conta.get())) : ResponseEntity.ok().build();
+       var conta = service.findByCpfCnpj(cpfCnpj);
+        return ResponseEntity.ok(this.converter.convertToDto(conta));
     }
 }

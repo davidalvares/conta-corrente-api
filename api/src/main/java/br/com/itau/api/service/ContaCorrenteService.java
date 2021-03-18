@@ -8,11 +8,11 @@ import java.util.Optional;
 @Service
 public interface ContaCorrenteService {
 
-    Optional<ContaCorrente> findById(Long id);
+    ContaCorrente findById(Long id);
 
     ContaCorrente save(ContaCorrente contaCorrente);
 
     ContaCorrente update(Long id, ContaCorrente contaCorrente);
 
-    Optional<ContaCorrente> findByCpfCnpj(String cpfCnpj);
+    ContaCorrente findByCpfCnpj(String cpfCnpj);
 }

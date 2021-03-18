@@ -1,14 +1,14 @@
 package br.com.itau.api.exception;
 
-import org.springframework.http.HttpStatus;
+import lombok.Getter;
 
-public class NegocioException extends RuntimeException{
+public class ObjectNotFoundException extends RuntimeException{
 
-    private String message;
-    private HttpStatus status;
+    @Getter
+    private Object[] params;
 
-    public NegocioException(String message, HttpStatus status) {
-        this.message = message;
-        this.status = status;
+    public ObjectNotFoundException(String message) {
+        super(message);
+        this.params = new Object[]{};
     }
 }
