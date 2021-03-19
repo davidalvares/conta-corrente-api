@@ -4,13 +4,13 @@ import br.com.itau.api.exception.ObjectNotFoundException;
 import br.com.itau.api.handle.helper.StandardError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
+
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 

@@ -1,6 +1,5 @@
 package br.com.itau.api.model.converter;
 
-
 import br.com.itau.api.component.Converter;
 import br.com.itau.api.model.ContaCorrente;
 import br.com.itau.api.model.dto.ContaCorrenteDTO;

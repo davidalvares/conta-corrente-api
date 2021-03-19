@@ -22,25 +22,25 @@ public class ContaCorrenteController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ContaCorrenteDTO> findById(@PathVariable("id") Long id) {
-      var contaCorrente = service.findById(id);
+        var contaCorrente = service.findById(id);
         return ResponseEntity.ok(converter.convertToDto(contaCorrente));
     }
 
     @PostMapping
-    public ResponseEntity<ContaCorrenteDTO> save(@RequestBody @Validated ContaCorrenteDTO dto){
+    public ResponseEntity<ContaCorrenteDTO> save(@RequestBody @Validated ContaCorrenteDTO dto) {
         ContaCorrente contaCorrente = converter.convertToEntity(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(this.converter.convertToDto(service.save(contaCorrente)));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ContaCorrenteDTO> update(@PathVariable("id") Long id,@RequestBody @Validated ContaCorrenteDTO dto){
+    public ResponseEntity<ContaCorrenteDTO> update(@PathVariable("id") Long id, @RequestBody @Validated ContaCorrenteDTO dto) {
         ContaCorrente contaCorrente = converter.convertToEntity(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(this.converter.convertToDto(service.update(id,contaCorrente)));
+        return ResponseEntity.status(HttpStatus.OK).body(this.converter.convertToDto(service.update(id, contaCorrente)));
     }
 
     @GetMapping
-    public ResponseEntity<ContaCorrenteDTO> findByCpfCnpj(@RequestParam("cpfCnpj") String cpfCnpj){
-       var conta = service.findByCpfCnpj(cpfCnpj);
+    public ResponseEntity<ContaCorrenteDTO> findByCpfCnpj(@RequestParam("cpfCnpj") String cpfCnpj) {
+        var conta = service.findByCpfCnpj(cpfCnpj);
         return ResponseEntity.ok(this.converter.convertToDto(conta));
     }
 }

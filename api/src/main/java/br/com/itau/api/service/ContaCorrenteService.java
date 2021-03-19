@@ -3,8 +3,6 @@ package br.com.itau.api.service;
 import br.com.itau.api.model.ContaCorrente;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public interface ContaCorrenteService {
 

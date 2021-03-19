@@ -4,7 +4,7 @@ import org.apache.commons.lang.RandomStringUtils;
 
 public class ModelsBuilder {
 
-    public static ContaCorrente contaCorrente(){
+    public static ContaCorrente contaCorrente() {
         return ContaCorrente.builder()
                 .id(1L)
                 .nome(RandomStringUtils.randomAlphabetic(15))
