@@ -12,14 +12,14 @@ public class ContaCorrenteConverter extends Converter<ContaCorrente, ContaCorren
         super(ContaCorrenteConverter::convertFromDTO, ContaCorrenteConverter::convertFromEntity);
     }
 
-    private static ContaCorrente convertFromDTO(final ContaCorrenteDTO dto) {
+    public static ContaCorrente convertFromDTO(final ContaCorrenteDTO dto) {
         return ContaCorrente.builder().id(dto.getId()).nome(dto.getNome())
                 .celular(dto.getCelular()).cpfCnpj(dto.getCpfCnpj())
                 .conta(dto.getConta()).email(dto.getEmail()).chavePix(dto.getChavePix())
                 .build();
     }
 
-    private static ContaCorrenteDTO convertFromEntity(final ContaCorrente entity) {
+    public static ContaCorrenteDTO convertFromEntity(final ContaCorrente entity) {
         return ContaCorrenteDTO.builder().id(entity.getId()).nome(entity.getNome())
                 .celular(entity.getCelular()).cpfCnpj(entity.getCpfCnpj())
                 .conta(entity.getConta()).email(entity.getEmail()).chavePix(entity.getChavePix())

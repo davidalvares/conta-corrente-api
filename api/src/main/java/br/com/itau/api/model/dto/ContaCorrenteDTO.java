@@ -1,5 +1,7 @@
 package br.com.itau.api.model.dto;
+
 import lombok.*;
+
 import java.io.Serializable;
 
 @Getter

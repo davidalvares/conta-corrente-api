@@ -1,16 +1,19 @@
 package br.com.itau.api.service;
 
 import br.com.itau.api.model.ContaCorrente;
+import br.com.itau.api.model.dto.ContaCorrenteDTO;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public interface ContaCorrenteService {
 
-    ContaCorrente findById(Long id);
+    ContaCorrenteDTO findById(Long id);
 
-    ContaCorrente save(ContaCorrente contaCorrente);
+    ContaCorrenteDTO salvarConta(ContaCorrente contaCorrente);
 
-    ContaCorrente update(Long id, ContaCorrente contaCorrente);
+    ContaCorrenteDTO update(Long id, ContaCorrente contaCorrente);
 
-    ContaCorrente findByCpfCnpj(String cpfCnpj);
+    ContaCorrenteDTO findByCpfCnpj(String cpfCnpj);
 }
